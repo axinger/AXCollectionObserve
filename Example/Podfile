@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '9.0'
+source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
+
+target 'AXCollectionObserve_Example' do
+  pod 'AXCollectionObserve', :path => '../'
+
+  pod 'Masonry'
+  
+  target 'AXCollectionObserve_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

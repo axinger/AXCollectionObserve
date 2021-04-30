@@ -1,0 +1,6 @@
+framework module AXCollectionObserve {
+  umbrella header "AXCollectionObserve-umbrella.h"
+
+  export *
+  module * { export * }
+}
