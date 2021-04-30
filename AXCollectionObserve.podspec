@@ -24,7 +24,7 @@ OC集合监听
   s.homepage         = 'https://github.com/axinger/AXCollectionObserve'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'axinger' => 'axingrun@outlook.com' }
+  s.author           = { 'axinger' => 'liu_weixing@qq.com' }
   s.source           = { :git => 'https://github.com/axinger/AXCollectionObserve.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
 
