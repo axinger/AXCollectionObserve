@@ -1,8 +1,8 @@
 PODS:
-  - AXCollectionObserve (1.0.0):
-    - AXCollectionObserve/Core (= 1.0.0)
+  - AXCollectionObserve (1.1.0):
+    - AXCollectionObserve/Core (= 1.1.0)
     - ReactiveObjC (~> 3.0.0)
-  - AXCollectionObserve/Core (1.0.0):
+  - AXCollectionObserve/Core (1.1.0):
     - ReactiveObjC (~> 3.0.0)
   - Masonry (1.1.0)
   - ReactiveObjC (3.0.0)
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AXCollectionObserve: f760e3753a1d9849cba457ac1dab13c0b1b355e7
+  AXCollectionObserve: 2d9767f94eb1fcede5a6b4690d96383f59f56832
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  ReactiveObjC: a266e7c102a495d7d63f859980a2e071726f610a
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
 
 PODFILE CHECKSUM: bae9abe6b430ca95cc75a30a4acc8e9dd52cb277
 
