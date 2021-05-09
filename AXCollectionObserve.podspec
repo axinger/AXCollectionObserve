@@ -41,6 +41,6 @@ OC集合监听
   # }
 
   s.frameworks = 'Foundation'
-  s.dependency 'ReactiveObjC','> 3.0.0'
+  s.dependency 'ReactiveObjC','>= 3.0.0'
   
 end
