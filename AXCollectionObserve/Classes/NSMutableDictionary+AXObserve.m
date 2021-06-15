@@ -15,11 +15,12 @@
     NSArray<NSString *> *array = @[
         NSStringFromSelector(@selector(setObject:forKey:)),
         NSStringFromSelector(@selector(removeAllObjects)),
-//        NSStringFromSelector(@selector(removeObjectsForKeys:)),
+        //        NSStringFromSelector(@selector(removeObjectsForKeys:)),
         
-            NSStringFromSelector(@selector(removeObjectForKey:)),// 包含 removeObjectsForKeys:
+        NSStringFromSelector(@selector(removeObjectForKey:)),// 包含 removeObjectsForKeys:
         NSStringFromSelector(@selector(setDictionary:)),
         NSStringFromSelector(@selector(setObject:forKeyedSubscript:)),
+        NSStringFromSelector(@selector(addEntriesFromDictionary:)),
     ];
     for (NSString *str in array) {
         [self _ax_addSelector:NSSelectorFromString(str) handler:handler];

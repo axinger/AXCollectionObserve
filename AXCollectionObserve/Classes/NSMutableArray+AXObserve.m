@@ -16,6 +16,7 @@
         NSStringFromSelector(@selector(replaceObjectAtIndex:withObject:)),
         NSStringFromSelector(@selector(removeAllObjects)),
         NSStringFromSelector(@selector(removeObjectAtIndex:)), // 包含 removeLastObject removeObject:
+        NSStringFromSelector(@selector(addObjectsFromArray:)),
     ];
     for (NSString *str in array) {
         [self _ax_addSelector:NSSelectorFromString(str) handler:handler];

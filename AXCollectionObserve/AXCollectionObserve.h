@@ -9,3 +9,14 @@
 #import "NSMutableDictionary+AXObserve.h"
 #import "NSMutableOrderedSet+AXObserve.h"
 #import "NSMutableSet+AXObserve.h"
+
+/**
+ 如果 再次 赋值  self.array = temp; 需要用如下方法
+ [RACObserve(self, array) subscribeNext:^(id  _Nullable x) {
+     todo
+     [self.array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
+         [self _logArray];
+     }];
+ }];
+ 建议 先 removeAllObjects 再 addObjectsFromArray
+ */
