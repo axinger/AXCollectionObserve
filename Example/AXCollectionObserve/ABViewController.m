@@ -8,6 +8,7 @@
 
 #import "ABViewController.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
+#import "RACSignal+AXValueChange.h"
 @interface ABViewController ()
 @property(nonatomic,strong)  NSMutableArray *array;
 @end
@@ -46,11 +47,16 @@
     
 //    [RACObserve(self, array) subscribeNext:^(id  _Nullable x) {
 //        [self _logArray];
-        [self.array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
-            [self _logArray];
-        }];
+//        [self.array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
+//            [self _logArray];
+//        }];
 //    }];
     
+    @weakify(self)
+    [RACObserve(self, array) ax_valueChange:^(id  _Nonnull x) {
+        @strongify(self)
+        [self _logArray];
+    }];
     
     
 //    [self.array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
@@ -59,24 +65,22 @@
     
     
     [self _buttonTitle:@"数组内容" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         NSLog(@"array = %@",self.array);
     }];
     
-    
-    
     [self _buttonTitle:@"数组添加元素" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         NSString *str = [NSString stringWithFormat:@"array-%ld",self.array.count];
         [self.array addObject:str];
     }];
     [self _buttonTitle:@"数组插入元素" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         NSString *str = [NSString stringWithFormat:@"array-%ld",self.array.count];
         [self.array insertObject:str atIndex:0];
     }];
     [self _buttonTitle:@"数组删除最后一个元素" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         if (self.array.count>0) {
             [self.array removeLastObject];
         }
@@ -84,14 +88,14 @@
     }];
 
     [self _buttonTitle:@"数组删除第一个元素" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         if (self.array.count>0) {
             [self.array removeObjectAtIndex:0];
         }
     }];
     
     [self _buttonTitle:@"removeObject:inRange:" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         if (self.array.count>0) {
             [self.array removeObject:@"1" inRange:NSMakeRange(0, 2)];
         }
@@ -99,10 +103,11 @@
     
     
     [self _buttonTitle:@"数组清空元素" handler:^(UIButton * _Nonnull btn) {
-        
+        @strongify(self)
         [self.array removeAllObjects];
     }];
-    @weakify(self)
+   
+    
     [self _buttonTitle:@"数组赋值" handler:^(UIButton * _Nonnull btn) {
         @strongify(self)
         NSMutableArray *temp = NSMutableArray.array;
