@@ -5,7 +5,7 @@
 ## Example
 
 `NSMutableArray`
-```
+```objective-c
 @weakify(self)
 [RACObserve(self, array) ax_subscribeNext:^(id  _Nonnull x) {
     @strongify(self)
