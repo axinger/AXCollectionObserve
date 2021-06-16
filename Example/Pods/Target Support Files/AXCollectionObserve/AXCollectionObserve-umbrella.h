@@ -11,6 +11,8 @@
 #endif
 
 #import "AXCollectionObserve.h"
+#import "RACSignal+AXMutable.h"
+#import "AXMutableObserveProtocol.h"
 #import "NSMutableArray+AXObserve.h"
 #import "NSMutableDictionary+AXObserve.h"
 #import "NSMutableOrderedSet+AXObserve.h"

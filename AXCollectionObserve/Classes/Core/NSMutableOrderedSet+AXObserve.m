@@ -7,10 +7,11 @@
 
 #import "NSMutableOrderedSet+AXObserve.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "AXMutableHelper.h"
+
 @implementation NSMutableOrderedSet (AXObserve)
 
--(void)ax_valueChangeObserve:(void(^)(NSMutableOrderedSet *set))handler {
-    
+-(NSArray<NSString *> *)selectorArray {
     NSArray<NSString *> *array = @[
         NSStringFromSelector(@selector(insertObject:atIndex:)),
         NSStringFromSelector(@selector(removeObjectAtIndex:)),
@@ -37,21 +38,17 @@
         NSStringFromSelector(@selector(minusOrderedSet:)),
         NSStringFromSelector(@selector(unionOrderedSet:)),
     ];
-    for (NSString *str in array) {
-        [self _ax_addSelector:NSSelectorFromString(str) handler:handler];
-    }
-    
+    return array;
 }
 
--(void)_ax_addSelector:(SEL)selector handler:(void(^)(NSMutableOrderedSet *set))handler{
-    
-    __weak typeof(self) weakSelf = self;
-    [[self rac_signalForSelector:selector] subscribeNext:^(id  _Nullable x) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (handler) {
-            handler(strongSelf);
-        }
-    }];
+-(void)ax_valueChangeObserve:(void(^)(NSMutableOrderedSet *set))handler {
+    for (NSString *str in self.selectorArray) {
+        [AXMutableHelper addWithObjc:self selector:NSSelectorFromString(str) handler:handler];
+    }
+}
+
+-(RACSignal *)ax_collectSignal {
+    return [AXMutableHelper addWithObjc:self signal:self.selectorArray];
 }
 
 @end

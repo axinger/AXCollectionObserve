@@ -7,11 +7,11 @@
 
 #import "NSMutableSet+AXObserve.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "AXMutableHelper.h"
 
 @implementation NSMutableSet (AXObserve)
 
--(void)ax_valueChangeObserve:(void(^)(NSMutableSet *set))handler {
-    
+-(NSArray<NSString *> *)selectorArray {
     NSArray<NSString *> *array = @[
         NSStringFromSelector(@selector(addObject:)),
         NSStringFromSelector(@selector(removeObject:)),
@@ -22,21 +22,18 @@
         NSStringFromSelector(@selector(unionSet:)),
         NSStringFromSelector(@selector(setSet:)),
     ];
-    for (NSString *str in array) {
-        [self _ax_addSelector:NSSelectorFromString(str) handler:handler];
+    return array;
+}
+
+-(void)ax_valueChangeObserve:(void(^)(NSMutableSet *set))handler {
+    
+    for (NSString *str in self.selectorArray) {
+        [AXMutableHelper addWithObjc:self selector:NSSelectorFromString(str) handler:handler];
     }
     
 }
-
--(void)_ax_addSelector:(SEL)selector handler:(void(^)(NSMutableSet *set))handler{
-    
-    __weak typeof(self) weakSelf = self;
-    [[self rac_signalForSelector:selector] subscribeNext:^(id  _Nullable x) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (handler) {
-            handler(strongSelf);
-        }
-    }];
+-(RACSignal *)ax_collectSignal {
+    return [AXMutableHelper addWithObjc:self signal:self.selectorArray];
 }
 
 @end

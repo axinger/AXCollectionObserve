@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21482CD02678F77A00E452A9 /* RACSignal+AXValueChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 21482CCF2678F77A00E452A9 /* RACSignal+AXValueChange.m */; };
 		21851FD326121052009681B0 /* AXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21851FD226121052009681B0 /* AXBaseViewController.m */; };
 		21F88CA92612B6C000DFB9D6 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F88CA82612B6C000DFB9D6 /* ABViewController.m */; };
 		5FB199FAC6846B0051FC703A /* Pods_AXCollectionObserve_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B0D8A0A0EE6F9F917CEE9B /* Pods_AXCollectionObserve_Tests.framework */; };
@@ -42,8 +41,6 @@
 /* Begin PBXFileReference section */
 		03B0D8A0A0EE6F9F917CEE9B /* Pods_AXCollectionObserve_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXCollectionObserve_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1886AA36E05ABA19617C7C76 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		21482CCE2678F77A00E452A9 /* RACSignal+AXValueChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RACSignal+AXValueChange.h"; sourceTree = "<group>"; };
-		21482CCF2678F77A00E452A9 /* RACSignal+AXValueChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+AXValueChange.m"; sourceTree = "<group>"; };
 		21851FD126121051009681B0 /* AXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBaseViewController.h; sourceTree = "<group>"; };
 		21851FD226121052009681B0 /* AXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBaseViewController.m; sourceTree = "<group>"; };
 		21F88CA72612B6C000DFB9D6 /* ABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 				6003F5A6195388D20070C39A /* AXViewController.m */,
 				21F88CA72612B6C000DFB9D6 /* ABViewController.h */,
 				21F88CA82612B6C000DFB9D6 /* ABViewController.m */,
-				21482CCE2678F77A00E452A9 /* RACSignal+AXValueChange.h */,
-				21482CCF2678F77A00E452A9 /* RACSignal+AXValueChange.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -386,7 +381,6 @@
 				6003F59E195388D20070C39A /* AXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* AXViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				21482CD02678F77A00E452A9 /* RACSignal+AXValueChange.m in Sources */,
 				21851FD326121052009681B0 /* AXBaseViewController.m in Sources */,
 				21F88CA92612B6C000DFB9D6 /* ABViewController.m in Sources */,
 			);

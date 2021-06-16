@@ -1,6 +1,6 @@
 {
   "name": "AXCollectionObserve",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "A short description of AXCollectionObserve.",
   "description": "OC集合监听",
   "homepage": "https://github.com/axinger/AXCollectionObserve",
@@ -9,11 +9,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "axinger": "axingrun@outlook.com"
+    "axinger": "liu_weixing@qq.com"
   },
   "source": {
     "git": "https://github.com/axinger/AXCollectionObserve.git",
-    "tag": "1.1.0"
+    "tag": "1.1.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -23,13 +23,22 @@
   "frameworks": "Foundation",
   "dependencies": {
     "ReactiveObjC": [
-      "~> 3.0.0"
+      ">= 3.0.0"
     ]
   },
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "AXCollectionObserve/Classes/{NSMutableArray,NSMutableDictionary,NSMutableOrderedSet,NSMutableSet}+AXObserve.{h,m}"
+      "source_files": "AXCollectionObserve/Classes/Core/*.{h,m}"
+    },
+    {
+      "name": "Component",
+      "dependencies": {
+        "AXCollectionObserve/Core": [
+
+        ]
+      },
+      "source_files": "AXCollectionObserve/Classes/Component/*.{h,m}"
     }
   ]
 }

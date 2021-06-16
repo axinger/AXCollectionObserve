@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AXCollectionObserve'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'A short description of AXCollectionObserve.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,12 @@ OC集合监听
   s.source_files = 'AXCollectionObserve/AXCollectionObserve.h'
   # 虚拟文件夹
   s.subspec 'Core' do |ss|
-    ss.source_files = 'AXCollectionObserve/Classes/{NSMutableArray,NSMutableDictionary,NSMutableOrderedSet,NSMutableSet}+AXObserve.{h,m}'
+    ss.source_files = 'AXCollectionObserve/Classes/Core/*.{h,m}'
+  end
+  
+  s.subspec 'Component' do |ss|
+    ss.dependency 'AXCollectionObserve/Core'
+    ss.source_files = 'AXCollectionObserve/Classes/Component/*.{h,m}'
   end
   
   # s.resource_bundles = {

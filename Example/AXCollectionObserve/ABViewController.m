@@ -8,7 +8,7 @@
 
 #import "ABViewController.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
-#import "RACSignal+AXValueChange.h"
+
 @interface ABViewController ()
 @property(nonatomic,strong)  NSMutableArray *array;
 @end
@@ -23,11 +23,6 @@
     [self _testSet];
     [self _lastLoadBottomAttribute];
     
-//    NSArray * array = @[@"大吉大利",@"今晚吃鸡",@66666,@99999];
-//    [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@",x);
-//    }];
-
 }
 
 - (NSMutableArray *)array {
@@ -53,11 +48,10 @@
 //    }];
     
     @weakify(self)
-    [RACObserve(self, array) ax_valueChange:^(id  _Nonnull x) {
+    [RACObserve(self, array) ax_subscribeNext:^(id  _Nonnull x) {
         @strongify(self)
         [self _logArray];
     }];
-    
     
 //    [self.array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
 //        NSLog(@"ax_valueChangeObserve array = %@",array);

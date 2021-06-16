@@ -9,6 +9,7 @@
 #import "NSMutableDictionary+AXObserve.h"
 #import "NSMutableOrderedSet+AXObserve.h"
 #import "NSMutableSet+AXObserve.h"
+#import "RACSignal+AXMutable.h"
 
 /**
  如果 再次 赋值  self.array = temp; 需要用如下方法
