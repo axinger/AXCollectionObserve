@@ -5,7 +5,13 @@
 ## Example
 
 `NSMutableArray`
-
+```
+@weakify(self)
+[RACObserve(self, array) ax_subscribeNext:^(id  _Nonnull x) {
+    @strongify(self)
+    doSoming;
+}];
+```
 ```objective-c
 NSMutableArray *array = NSMutableArray.array;
 [array ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
