@@ -1,6 +1,6 @@
 # AXCollectionObserve
 
-由于Object-C中 利用 `NSMutableArray`等可变集合不能kvo,所以使用`ReactiveObjC`实现观察`NSMutableArray` 等可变集合内容变化,得到KVO效果,用来触发数据源.
+由于Object-C中`NSMutableArray`等可变集合不能kvo,所以使用`ReactiveObjC`实现观察`NSMutableArray` 等可变集合内容变化,得到KVO效果,用来触发数据源.
 
 ## Example
 
